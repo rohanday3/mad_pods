@@ -103,10 +103,11 @@ LR_BLOCKER       = 3e-4
 GAMMA            = 0.99        # discount factor
 GAE_LAMBDA       = 0.95        # GAE lambda for advantage estimation
 CLIP_EPS         = 0.2         # PPO clip ratio
-ENTROPY_COEF     = 0.01        # entropy bonus (encourages exploration)
+ENTROPY_COEF     = 0.003        # entropy bonus (encourages exploration)
 VALUE_COEF       = 0.5         # value loss weight
 MAX_GRAD_NORM    = 0.5         # gradient clipping
 PPO_EPOCHS       = 8           # optimisation passes per batch
+MAX_KL           = 0.015   # stop epochs early if KL exceeds this
 MINIBATCH_SIZE   = 512
 ROLLOUT_STEPS    = 2048        # steps collected per update (per worker)
 N_WORKERS        = max(1, mp.cpu_count() - 1)   # parallel envs
@@ -126,9 +127,9 @@ W_CP_HIT       = 800.0   # sparse reward per checkpoint passed
 W_WIN_BONUS    = 15000.0 # terminal reward for winning/losing
 W_SPEED_TO_CP  = 0.3     # velocity projected onto the vector toward next CP
                           # (replaces the old W_SPEED constant that was never used)
-W_TIME_PENALTY = -0.4    # small per-step cost to discourage dawdling
+W_TIME_PENALTY = -0.2    # small per-step cost to discourage dawdling
 W_ALIGN        = 0.1     # reward for facing the next CP while moving
-W_LEAD         = 0.5     # reward for being ahead of opponent in progress (phase 2)
+W_LEAD         = 0.25     # reward for being ahead of opponent in progress (phase 2)
 
 # Blocker rewards
 W_BLOCKER_DIST  = W_DIST_CLOSE * 2.0  # penalty when opponent closes on its CP
@@ -533,6 +534,9 @@ def ppo_update(policy: ActorCritic, optimizer: optim.Optimizer,
             # Approx KL (for diagnostics — alert if > 0.02)
             approx_kl  = ((ratio - 1) - log_ratio).mean().item()
             approx_kls.append(approx_kl)
+
+            if approx_kl > MAX_KL:
+                break   # inside the epoch loop
 
             clip_frac  = ((ratio - 1.0).abs() > CLIP_EPS).float().mean().item()
             clip_fracs.append(clip_frac)
@@ -986,6 +990,9 @@ def train():
             best_reward = mean_reward
             mark = " *** NEW BEST ***"
             export_weights(runner_policy, blocker_policy)
+            # also save a frozen copy
+            torch.save(runner_policy.state_dict(),  "runner_best.pt")
+            torch.save(blocker_policy.state_dict(), "blocker_best.pt")
         else:
             mark = ""
 
