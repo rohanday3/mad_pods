@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mad Pod Racing — Live Training Dashboard</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#080b14;color:#e0e8ff;font-family:'Inter',sans-serif;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+  header{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;background:rgba(255,255,255,0.03);border-bottom:1px solid rgba(100,150,255,0.15)}
+  header h1{font-family:'Orbitron',sans-serif;font-size:1.1rem;background:linear-gradient(90deg,#4af,#a4f,#4af);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px}
+  #status{font-size:.75rem;color:#7890aa;display:flex;gap:16px;align-items:center}
+  #dot{width:8px;height:8px;border-radius:50%;background:#f44;animation:pulse 1s infinite}
+  #dot.live{background:#4f8}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  main{display:flex;flex:1;overflow:hidden;gap:0}
+  /* Race panel */
+  #race-panel{flex:0 0 65%;display:flex;flex-direction:column;border-right:1px solid rgba(100,150,255,0.12)}
+  #canvas-wrap{flex:1;position:relative;overflow:hidden}
+  canvas{display:block;width:100%;height:100%}
+  #race-overlay{position:absolute;top:10px;left:10px;display:flex;gap:10px;flex-wrap:wrap}
+  .team-badge{padding:4px 10px;border-radius:20px;font-size:.72rem;font-weight:600;letter-spacing:.5px}
+  .team-a{background:rgba(64,200,255,0.2);border:1px solid rgba(64,200,255,0.5);color:#4cf}
+  .team-b{background:rgba(255,100,100,0.2);border:1px solid rgba(255,100,100,0.5);color:#f88}
+  #playbar{display:flex;align-items:center;gap:10px;padding:8px 14px;background:rgba(0,0,0,0.3)}
+  #scrubber{flex:1;accent-color:#4af}
+  #frame-label{font-size:.72rem;color:#7890aa;min-width:80px;text-align:right}
+  button{background:rgba(100,180,255,0.15);border:1px solid rgba(100,180,255,0.3);color:#adf;border-radius:6px;padding:4px 10px;cursor:pointer;font-size:.75rem}
+  button:hover{background:rgba(100,180,255,0.25)}
+  /* Stats panel */
+  #stats-panel{flex:1;display:flex;flex-direction:column;overflow-y:auto;padding:16px;gap:14px}
+  .card{background:rgba(255,255,255,0.04);border:1px solid rgba(100,150,255,0.1);border-radius:10px;padding:14px}
+  .card h3{font-family:'Orbitron',sans-serif;font-size:.7rem;letter-spacing:1.5px;color:#6a8fba;margin-bottom:10px}
+  .stat-row{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:5px}
+  .stat-val{font-weight:600;color:#4af;font-variant-numeric:tabular-nums}
+  .stat-val.good{color:#4f8}
+  .stat-val.bad{color:#f84}
+  #chart-canvas{width:100%;height:130px;display:block}
+  .winner-badge{text-align:center;padding:6px;border-radius:6px;font-size:.8rem;font-weight:700;margin-top:8px}
+  .winner-0{background:rgba(64,200,255,0.15);color:#4cf}
+  .winner-1{background:rgba(255,100,100,0.15);color:#f88}
+  .winner-none{background:rgba(255,255,255,0.05);color:#7890aa}
+  
+  /* NN viz styles */
+  #card-nn button {
+    flex: 1;
+    transition: all 0.2s ease;
+  }
+  #card-nn button.active {
+    background: rgba(100, 180, 255, 0.4);
+    border-color: #4af;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>⚡ MAD POD RACING — LIVE TRAINING</h1>
+  <div id="status">
+    <div id="dot"></div>
+    <span id="status-text">Waiting for live_state.json…</span>
+  </div>
+</header>
+<main>
+  <div id="race-panel">
+    <div id="canvas-wrap">
+      <canvas id="race-canvas"></canvas>
+      <div id="race-overlay">
+        <div class="team-badge team-a" id="badge-a">NN Bot — 0 CPs</div>
+        <div class="team-badge team-b" id="badge-b">Heuristic — 0 CPs</div>
+      </div>
+    </div>
+    <div id="playbar">
+      <button id="btn-play">▶</button>
+      <input type="range" id="scrubber" min="0" value="0" step="1">
+      <span id="frame-label">Frame 0/0</span>
+    </div>
+  </div>
+  <div id="stats-panel">
+    <div class="card" id="card-training">
+      <h3>TRAINING PROGRESS</h3>
+      <div class="stat-row"><span>Generation</span><span class="stat-val" id="s-gen">—</span></div>
+      <div class="stat-row"><span>Current fitness</span><span class="stat-val" id="s-fit">—</span></div>
+      <div class="stat-row"><span>Best fitness</span><span class="stat-val good" id="s-best">—</span></div>
+      <div class="stat-row"><span>Sigma (noise)</span><span class="stat-val" id="s-sigma">—</span></div>
+      <div class="stat-row"><span>Elapsed</span><span class="stat-val" id="s-elapsed">—</span></div>
+      <div class="stat-row"><span>Progress</span><span class="stat-val" id="s-pct">—</span></div>
+    </div>
+    <div class="card">
+      <h3>FITNESS HISTORY</h3>
+      <canvas id="chart-canvas"></canvas>
+    </div>
+    <div class="card" id="card-race">
+      <h3>LAST RACE</h3>
+      <div class="stat-row"><span>Total frames</span><span class="stat-val" id="s-frames">—</span></div>
+      <div class="stat-row"><span>Checkpoints (NN)</span><span class="stat-val" id="s-cps-a">—</span></div>
+      <div class="stat-row"><span>Checkpoints (Heur)</span><span class="stat-val" id="s-cps-b">—</span></div>
+      <div id="winner-div" class="winner-badge winner-none">—</div>
+    </div>
+    <div class="card" id="card-nn">
+      <h3>NEURAL NETWORK ARCHITECTURE</h3>
+      <div style="display: flex; gap: 8px; margin-bottom: 10px;">
+        <button id="btn-nn-runner" class="active">Runner NN</button>
+        <button id="btn-nn-blocker">Blocker NN</button>
+      </div>
+      <canvas id="nn-canvas" style="width: 100%; height: 220px; display: block; background: rgba(0,0,0,0.2); border-radius: 6px;"></canvas>
+    </div>
+  </div>
+</main>
+<script>
+const POLL_MS = 3000;
+const FRAME_MS = 80; // playback speed
+
+// ── Canvas setup ──────────────────────────────────────────────────────────────
+const canvas = document.getElementById('race-canvas');
+const ctx = canvas.getContext('2d');
+const chart = document.getElementById('chart-canvas');
+const chartCtx = chart.getContext('2d');
+const nnCanvas = document.getElementById('nn-canvas');
+const nnCtx = nnCanvas.getContext('2d');
+
+function resizeCanvas() {
+  const wrap = document.getElementById('canvas-wrap');
+  canvas.width = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  chart.width = chart.offsetWidth || 300;
+  chart.height = chart.offsetHeight || 130;
+  nnCanvas.width = nnCanvas.offsetWidth || 300;
+  nnCanvas.height = nnCanvas.offsetHeight || 220;
+  if (state) drawNN();
+}
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('load', resizeCanvas);
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let state = null;
+let frames = [];
+let frameIdx = 0;
+let playing = true;
+let animTimer = null;
+// Trails per pod
+const trails = [[], [], [], []];
+const TRAIL_LEN = 25;
+
+// ── Fetch & update ────────────────────────────────────────────────────────────
+async function fetchState() {
+  try {
+    const r = await fetch('live_state.json?_=' + Date.now());
+    if (!r.ok) return;
+    const data = await r.json();
+    if (!state || data.gen !== state.gen) {
+      state = data;
+      frames = data.frames || [];
+      // Reset trails on new race
+      for (let i=0;i<4;i++) trails[i]=[];
+      document.getElementById('scrubber').max = Math.max(0, frames.length - 1);
+      if (playing) frameIdx = 0;
+      updateStats();
+      drawChart();
+      drawNN();
+    }
+    document.getElementById('dot').className = 'live';
+    document.getElementById('status-text').textContent = `Gen ${data.gen} / ${data.max_gens} · Updated ${new Date().toLocaleTimeString()}`;
+  } catch(e) {
+    console.error('fetchState error:', e);
+    document.getElementById('dot').className = '';
+    document.getElementById('status-text').textContent = 'Error: ' + e.message;
+  }
+}
+
+function updateStats() {
+  if (!state) return;
+  const fmt = v => v > 0 ? '+'+v.toFixed(0) : v.toFixed(0);
+  document.getElementById('s-gen').textContent = `${state.gen} / ${state.max_gens}`;
+  document.getElementById('s-fit').textContent = fmt(state.gen_fitness);
+  document.getElementById('s-best').textContent = fmt(state.best_fitness);
+  document.getElementById('s-sigma').textContent = state.sigma.toFixed(4);
+  const e = state.elapsed;
+  document.getElementById('s-elapsed').textContent = e < 60 ? `${e.toFixed(0)}s` : `${(e/60).toFixed(1)}m`;
+  document.getElementById('s-pct').textContent = `${(100*state.gen/state.max_gens).toFixed(1)}%`;
+  document.getElementById('s-frames').textContent = frames.length;
+
+  if (frames.length) {
+    const last = frames[frames.length-1];
+    const cpsA = Math.max(last.pods[0].cps, last.pods[1].cps);
+    const cpsB = Math.max(last.pods[2].cps, last.pods[3].cps);
+    document.getElementById('s-cps-a').textContent = `${cpsA} / ${state.total_cps}`;
+    document.getElementById('s-cps-b').textContent = `${cpsB} / ${state.total_cps}`;
+    const wd = document.getElementById('winner-div');
+    if (state.winner === 0) { wd.className='winner-badge winner-0'; wd.textContent='🏆 NN Bot wins!'; }
+    else if (state.winner === 1) { wd.className='winner-badge winner-1'; wd.textContent='Heuristic wins'; }
+    else { wd.className='winner-badge winner-none'; wd.textContent='Race in progress…'; }
+  }
+}
+
+// ── Fitness chart ─────────────────────────────────────────────────────────────
+function drawChart() {
+  if (!state || !state.history.length) return;
+  const h = state.history;
+  const W = chart.width, H = chart.height;
+  chartCtx.clearRect(0,0,W,H);
+
+  const vals = h.map(r => r[1]);
+  const bestVals = h.map(r => r[2]);
+  const allVals = [...vals, ...bestVals];
+  const minV = Math.min(...allVals), maxV = Math.max(...allVals);
+  const range = maxV - minV || 1;
+
+  function toX(i) { return (i / (h.length-1)) * (W-20) + 10; }
+  function toY(v) { return H - 10 - ((v - minV) / range) * (H-20); }
+
+  // Grid
+  chartCtx.strokeStyle = 'rgba(100,150,255,0.08)';
+  for (let i=0;i<4;i++) {
+    const y = 10 + i*(H-20)/3;
+    chartCtx.beginPath(); chartCtx.moveTo(0,y); chartCtx.lineTo(W,y); chartCtx.stroke();
+  }
+
+  // Current fitness line
+  chartCtx.beginPath();
+  chartCtx.strokeStyle = 'rgba(100,150,255,0.5)';
+  chartCtx.lineWidth = 1.5;
+  vals.forEach((v,i) => i===0 ? chartCtx.moveTo(toX(i),toY(v)) : chartCtx.lineTo(toX(i),toY(v)));
+  chartCtx.stroke();
+
+  // Best fitness line
+  chartCtx.beginPath();
+  chartCtx.strokeStyle = '#4f8';
+  chartCtx.lineWidth = 2;
+  bestVals.forEach((v,i) => i===0 ? chartCtx.moveTo(toX(i),toY(v)) : chartCtx.lineTo(toX(i),toY(v)));
+  chartCtx.stroke();
+
+  // Labels
+  chartCtx.fillStyle = 'rgba(100,200,255,0.7)';
+  chartCtx.font = '10px Inter';
+  chartCtx.fillText('current', 12, 14);
+  chartCtx.fillStyle = '#4f8';
+  chartCtx.fillText('best', 12, 26);
+}
+
+// ── Race renderer ─────────────────────────────────────────────────────────────
+const COLORS     = ['#40c8ff','#2090cc','#ff6060','#cc3030'];
+const COLORS_RGB = ['64,200,255','32,144,204','255,96,96','204,48,48'];
+const TEAM_ROLES = ['runner','blocker','runner','blocker'];
+
+function worldToScreen(x, y) {
+  if (!state) return [0,0];
+  const sx = x / state.map_w * canvas.width;
+  const sy = y / state.map_h * canvas.height;
+  return [sx, sy];
+}
+
+function drawRace(frame) {
+  if (!frame || !state) return;
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0,0,W,H);
+
+  // Background grid
+  ctx.strokeStyle = 'rgba(60,80,120,0.15)';
+  ctx.lineWidth = 1;
+  for (let gx=0; gx<W; gx+=60) { ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,H); ctx.stroke(); }
+  for (let gy=0; gy<H; gy+=60) { ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(W,gy); ctx.stroke(); }
+
+  const cps = state.checkpoints;
+
+  // Draw checkpoint connections
+  ctx.strokeStyle = 'rgba(100,130,200,0.15)';
+  ctx.setLineDash([8,12]);
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  cps.forEach((cp,i) => {
+    const [sx,sy] = worldToScreen(cp[0],cp[1]);
+    i===0 ? ctx.moveTo(sx,sy) : ctx.lineTo(sx,sy);
+  });
+  ctx.closePath();
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Draw checkpoints
+  cps.forEach((cp, i) => {
+    const [sx,sy] = worldToScreen(cp[0],cp[1]);
+    const r = 600 / state.map_w * W;
+    const grad = ctx.createRadialGradient(sx,sy,0,sx,sy,r);
+    grad.addColorStop(0, 'rgba(150,200,255,0.18)');
+    grad.addColorStop(1, 'rgba(100,150,255,0)');
+    ctx.beginPath();
+    ctx.arc(sx,sy,r,0,Math.PI*2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(100,180,255,0.4)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    // Number
+    ctx.fillStyle = 'rgba(180,220,255,0.8)';
+    ctx.font = `bold ${Math.max(10,r*0.7)}px Orbitron`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(i, sx, sy);
+  });
+
+  // Draw trails
+  frame.pods.forEach((pod, i) => {
+    const [sx,sy] = worldToScreen(pod.x, pod.y);
+    trails[i].push([sx,sy]);
+    if (trails[i].length > TRAIL_LEN) trails[i].shift();
+  });
+
+  for (let i=0;i<4;i++) {
+    const trail = trails[i];
+    if (trail.length < 2) continue;
+    for (let j=1; j<trail.length; j++) {
+      const alpha = (j/trail.length) * 0.5;
+      ctx.strokeStyle = `rgba(${COLORS_RGB[i]},${alpha})`;
+      ctx.lineWidth = 3 * (j/trail.length);
+      ctx.beginPath();
+      ctx.moveTo(trail[j-1][0], trail[j-1][1]);
+      ctx.lineTo(trail[j][0], trail[j][1]);
+      ctx.stroke();
+    }
+  }
+
+  // Draw pods
+  frame.pods.forEach((pod, i) => {
+    const [sx,sy] = worldToScreen(pod.x, pod.y);
+    const rad = pod.angle * Math.PI / 180;
+    const podR = 400 / state.map_w * W;
+
+    ctx.save();
+    ctx.translate(sx, sy);
+    ctx.rotate(rad);
+
+    if (pod.shield) {
+      ctx.beginPath();
+      ctx.arc(0,0,podR*1.6,0,Math.PI*2);
+      ctx.strokeStyle = i<2 ? 'rgba(64,200,255,0.6)' : 'rgba(255,100,100,0.6)';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+    }
+
+    // Pod body
+    const g = ctx.createRadialGradient(0,0,0,0,0,podR);
+    const col = COLORS[i];
+    g.addColorStop(0, col+'ff');
+    g.addColorStop(1, col+'44');
+    ctx.beginPath();
+    ctx.arc(0,0,podR,0,Math.PI*2);
+    ctx.fillStyle = g;
+    ctx.fill();
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // Direction arrow
+    ctx.beginPath();
+    ctx.moveTo(podR,0);
+    ctx.lineTo(podR*1.8,0);
+    ctx.strokeStyle = col;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    ctx.restore();
+
+    // Label
+    ctx.fillStyle = '#fff';
+    ctx.font = '10px Inter';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(`P${i} ${TEAM_ROLES[i][0].toUpperCase()}`, sx, sy - podR - 10);
+  });
+
+  // Update team badges
+  const cpsA = Math.max(frame.pods[0].cps, frame.pods[1].cps);
+  const cpsB = Math.max(frame.pods[2].cps, frame.pods[3].cps);
+  const tA = state.team_names[0], tB = state.team_names[1];
+  document.getElementById('badge-a').textContent = `${tA} — ${cpsA}/${state.total_cps} CPs`;
+  document.getElementById('badge-b').textContent = `${tB} — ${cpsB}/${state.total_cps} CPs`;
+}
+
+// ── Playback ──────────────────────────────────────────────────────────────────
+const scrubber = document.getElementById('scrubber');
+const frameLabel = document.getElementById('frame-label');
+const btnPlay = document.getElementById('btn-play');
+
+function renderFrame(idx) {
+  if (!frames.length) return;
+  idx = Math.max(0, Math.min(frames.length-1, idx));
+  frameIdx = idx;
+  scrubber.value = idx;
+  frameLabel.textContent = `Frame ${idx+1}/${frames.length}`;
+  drawRace(frames[idx]);
+}
+
+function tick() {
+  if (playing && frames.length) {
+    frameIdx = (frameIdx + 1) % frames.length;
+    renderFrame(frameIdx);
+  }
+  animTimer = setTimeout(tick, FRAME_MS);
+}
+
+scrubber.addEventListener('input', () => { playing=false; btnPlay.textContent='▶'; renderFrame(+scrubber.value); });
+btnPlay.addEventListener('click', () => {
+  playing = !playing;
+  btnPlay.textContent = playing ? '⏸' : '▶';
+  if (playing && frameIdx >= frames.length-1) frameIdx = 0;
+});
+
+// ── NN Visualization ─────────────────────────────────────────────────────────
+let activeNnMode = 'runner';
+
+document.getElementById('btn-nn-runner').addEventListener('click', () => {
+  activeNnMode = 'runner';
+  document.getElementById('btn-nn-runner').classList.add('active');
+  document.getElementById('btn-nn-blocker').classList.remove('active');
+  drawNN();
+});
+
+document.getElementById('btn-nn-blocker').addEventListener('click', () => {
+  activeNnMode = 'blocker';
+  document.getElementById('btn-nn-blocker').classList.add('active');
+  document.getElementById('btn-nn-runner').classList.remove('active');
+  drawNN();
+});
+
+function unpackWeights(flat, in_sz, h1, h2, out_sz) {
+  let idx = 0;
+  function take(rows, cols) {
+    let arr = [];
+    for (let r = 0; r < rows; r++) {
+      let row = [];
+      for (let c = 0; c < cols; c++) {
+        row.push(flat[idx++]);
+      }
+      arr.push(row);
+    }
+    return arr;
+  }
+  function takeBias(n) {
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+      arr.push(flat[idx++]);
+    }
+    return arr;
+  }
+  let W1 = take(h1, in_sz);
+  let b1 = takeBias(h1);
+  let W2 = take(h2, h1);
+  let b2 = takeBias(h2);
+  let W3 = take(out_sz, h2);
+  let b3 = takeBias(out_sz);
+  return { W1, b1, W2, b2, W3, b3 };
+}
+
+function drawNN() {
+  if (!state) return;
+  const W = nnCanvas.width;
+  const H = nnCanvas.height;
+  nnCtx.clearRect(0, 0, W, H);
+
+  let arch, weightsFlat;
+  if (activeNnMode === 'runner') {
+    arch = [14, 32, 16, 4];
+    weightsFlat = state.runner_weights;
+  } else {
+    arch = [12, 32, 16, 3];
+    weightsFlat = state.blocker_weights;
+  }
+
+  if (!weightsFlat || weightsFlat.length === 0) {
+    nnCtx.fillStyle = 'rgba(255,255,255,0.4)';
+    nnCtx.font = '12px Inter';
+    nnCtx.textAlign = 'center';
+    nnCtx.textBaseline = 'middle';
+    nnCtx.fillText('No weights loaded yet...', W/2, H/2);
+    return;
+  }
+
+  const { W1, b1, W2, b2, W3, b3 } = unpackWeights(weightsFlat, arch[0], arch[1], arch[2], arch[3]);
+  const layers = [
+    { size: arch[0] },
+    { size: arch[1], W: W1, b: b1 },
+    { size: arch[2], W: W2, b: b2 },
+    { size: arch[3], W: W3, b: b3 }
+  ];
+
+  const layerCount = layers.length;
+  const layerX = [];
+  const nodeY = [];
+
+  for (let l = 0; l < layerCount; l++) {
+    layerX.push(30 + l * (W - 60) / (layerCount - 1));
+    const size = layers[l].size;
+    const ys = [];
+    const nodeSpacing = (H - 30) / (size + 1);
+    for (let i = 0; i < size; i++) {
+      ys.push(10 + (i + 1) * nodeSpacing);
+    }
+    nodeY.push(ys);
+  }
+
+  // Draw connections
+  for (let l = 1; l < layerCount; l++) {
+    const prevLayerSize = layers[l-1].size;
+    const currLayerSize = layers[l].size;
+    const W_mat = layers[l].W;
+
+    for (let j = 0; j < currLayerSize; j++) {
+      for (let i = 0; i < prevLayerSize; i++) {
+        const weight = W_mat[j][i];
+        const absW = Math.abs(weight);
+        if (absW < 0.1) continue; // keep visualization clean
+
+        const x1 = layerX[l-1];
+        const y1 = nodeY[l-1][i];
+        const x2 = layerX[l];
+        const y2 = nodeY[l][j];
+
+        nnCtx.beginPath();
+        nnCtx.moveTo(x1, y1);
+        nnCtx.lineTo(x2, y2);
+
+        if (weight > 0) {
+          nnCtx.strokeStyle = `rgba(64, 200, 255, ${Math.min(0.4, absW * 0.15)})`;
+        } else {
+          nnCtx.strokeStyle = `rgba(255, 100, 100, ${Math.min(0.4, absW * 0.15)})`;
+        }
+        nnCtx.lineWidth = Math.min(2.0, absW * 0.5);
+        nnCtx.stroke();
+      }
+    }
+  }
+
+  // Draw nodes
+  for (let l = 0; l < layerCount; l++) {
+    const size = layers[l].size;
+    const r = l === 0 || l === layerCount - 1 ? 4.5 : 2.5;
+    for (let i = 0; i < size; i++) {
+      const x = layerX[l];
+      const y = nodeY[l][i];
+
+      nnCtx.beginPath();
+      nnCtx.arc(x, y, r, 0, Math.PI * 2);
+      
+      let fillCol = '#fff';
+      if (l > 0) {
+        const bias = layers[l].b[i];
+        fillCol = bias > 0 ? '#4cf' : (bias < 0 ? '#f88' : '#aaa');
+      } else {
+        fillCol = '#9ab';
+      }
+
+      nnCtx.fillStyle = fillCol;
+      nnCtx.fill();
+      nnCtx.strokeStyle = 'rgba(0,0,0,0.5)';
+      nnCtx.lineWidth = 0.8;
+      nnCtx.stroke();
+    }
+  }
+
+  // Labels
+  nnCtx.fillStyle = 'rgba(255,255,255,0.5)';
+  nnCtx.font = '8px Orbitron';
+  nnCtx.textAlign = 'center';
+  nnCtx.fillText('INPUTS', layerX[0], H - 5);
+  nnCtx.fillText('H1', layerX[1], H - 5);
+  nnCtx.fillText('H2', layerX[2], H - 5);
+  nnCtx.fillText('OUTPUTS', layerX[3], H - 5);
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+fetchState();
+setInterval(fetchState, POLL_MS);
+tick();
+</script>
+</body>
+</html>

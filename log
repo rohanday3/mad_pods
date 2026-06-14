@@ -1,0 +1,2231 @@
+Initialization:
+daemon_slayer rank: 1
+DarthBoss rank: 1
+Standard Output Stream:
+5346 3989 100
+11011 3122 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (5346, 3989) at power 100
+Pod 2 of player daemon_slayer moves towards (11011, 3122) at power 100
+001
+131
+Standard Output Stream:
+11319 2794 100
+11319 2794 100
+Game information:
+Pod 1 of player DarthBoss moves towards (11319, 2794) at power 100
+Pod 2 of player DarthBoss moves towards (11319, 2794) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+6879 6496 100
+10886 3192 BOOST
+Game information:
+Pod 1 of player daemon_slayer moves towards (6879, 6496) at power 100
+Pod 2 of player daemon_slayer boosts towards (10886, 3192)
+002
+131
+Standard Output Stream:
+10987 2858 BOOST
+11059 3010 100
+Game information:
+Pod 1 of player DarthBoss boosts towards (10987, 2858)
+Pod 2 of player DarthBoss moves towards (11059, 3010) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+7082 3642 100
+10085 3638 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7082, 3642) at power 100
+Pod 2 of player daemon_slayer moves towards (10085, 3638) at power 100
+003
+131
+Standard Output Stream:
+8871 3282 100
+10839 3194 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8871, 3282) at power 100
+Pod 2 of player DarthBoss moves towards (10839, 3194) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+8984 3263 100
+10098 3629 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8984, 3263) at power 100
+Pod 2 of player daemon_slayer moves towards (10098, 3629) at power 100
+004
+131
+Standard Output Stream:
+8907 3274 100
+10651 3350 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8907, 3274) at power 100
+Pod 2 of player DarthBoss moves towards (10651, 3350) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+8467 3366 100
+10110 3622 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8467, 3366) at power 100
+Pod 2 of player daemon_slayer moves towards (10110, 3622) at power 100
+005
+131
+Standard Output Stream:
+8939 3266 100
+10491 3482 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8939, 3266) at power 100
+Pod 2 of player DarthBoss moves towards (10491, 3482) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+8562 3346 100
+10121 3617 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8562, 3346) at power 100
+Pod 2 of player daemon_slayer moves towards (10121, 3617) at power 100
+006
+131
+Standard Output Stream:
+5119 7379 0
+10355 3594 100
+Game information:
+Pod 1 of player DarthBoss moves towards (5119, 7379) at power 0
+Pod 2 of player DarthBoss moves towards (10355, 3594) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+9107 3238 100
+10129 3612 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (9107, 3238) at power 100
+Pod 2 of player daemon_slayer moves towards (10129, 3612) at power 0
+007
+131
+Standard Output Stream:
+5475 7307 100
+10239 3690 100
+Game information:
+Pod 1 of player DarthBoss moves towards (5475, 7307) at power 100
+Pod 2 of player DarthBoss moves towards (10239, 3690) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+6663 4906 100
+10042 3287 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6663, 4906) at power 100
+Pod 2 of player daemon_slayer moves towards (10042, 3287) at power 0
+008
+131
+Standard Output Stream:
+5987 7691 100
+10143 3770 100
+Game information:
+Pod 1 of player DarthBoss moves towards (5987, 7691) at power 100
+Pod 2 of player DarthBoss moves towards (10143, 3770) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+6676 4926 100
+10189 3262 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6676, 4926) at power 100
+Pod 2 of player daemon_slayer moves towards (10189, 3262) at power 0
+009
+131
+Standard Output Stream:
+5963 7343 100
+10059 3842 100
+Game information:
+Pod 1 of player DarthBoss moves towards (5963, 7343) at power 100
+Pod 2 of player DarthBoss moves towards (10059, 3842) at power 100
+Game Summary:
+daemon_slayer rank: 1
+DarthBoss rank: 2
+Standard Output Stream:
+10972 2963 100
+10313 3240 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (10972, 2963) at power 100
+Pod 2 of player daemon_slayer moves towards (10313, 3240) at power 0
+010
+131
+Standard Output Stream:
+6023 6979 100
+9991 3902 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6023, 6979) at power 100
+Pod 2 of player DarthBoss moves towards (9991, 3902) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10791 3112 100
+10418 3221 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (10791, 3112) at power 100
+Pod 2 of player daemon_slayer moves towards (10418, 3221) at power 0
+011
+131
+Standard Output Stream:
+6175 6639 29
+6087 8071 0
+Game information:
+Pod 1 of player DarthBoss moves towards (6175, 6639) at power 29
+Pod 2 of player DarthBoss moves towards (6087, 8071) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11087 3216 100
+10508 3206 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11087, 3216) at power 100
+Pod 2 of player daemon_slayer moves towards (10508, 3206) at power 100
+012
+131
+Standard Output Stream:
+6383 6583 100
+6299 7895 0
+Game information:
+Pod 1 of player DarthBoss moves towards (6383, 6583) at power 100
+Pod 2 of player DarthBoss moves towards (6299, 7895) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11280 3421 100
+10654 3318 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11280, 3421) at power 100
+Pod 2 of player daemon_slayer moves towards (10654, 3318) at power 100
+013
+131
+Standard Output Stream:
+6691 6323 100
+6479 7747 0
+Game information:
+Pod 1 of player DarthBoss moves towards (6691, 6323) at power 100
+Pod 2 of player DarthBoss moves towards (6479, 7747) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11528 3943 100
+10814 3386 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11528, 3943) at power 100
+Pod 2 of player daemon_slayer moves towards (10814, 3386) at power 100
+014
+131
+Standard Output Stream:
+7039 6163 100
+6631 7619 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7039, 6163) at power 100
+Pod 2 of player DarthBoss moves towards (6631, 7619) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11706 4323 100
+10976 3406 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11706, 4323) at power 100
+Pod 2 of player daemon_slayer moves towards (10976, 3406) at power 100
+015
+131
+Standard Output Stream:
+6775 5895 100
+7095 7535 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6775, 5895) at power 100
+Pod 2 of player DarthBoss moves towards (7095, 7535) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11013 3294 100
+11124 3381 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11013, 3294) at power 100
+Pod 2 of player daemon_slayer moves towards (11124, 3381) at power 100
+016
+131
+Standard Output Stream:
+7191 5907 100
+6935 7179 40
+Game information:
+Pod 1 of player DarthBoss moves towards (7191, 5907) at power 100
+Pod 2 of player DarthBoss moves towards (6935, 7179) at power 40
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8698 4137 0
+11248 3313 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8698, 4137) at power 0
+Pod 2 of player daemon_slayer moves towards (11248, 3313) at power 100
+017
+131
+Standard Output Stream:
+7543 5927 100
+6967 7011 SHIELD
+Game information:
+Pod 1 of player DarthBoss moves towards (7543, 5927) at power 100
+Pod 2 of player DarthBoss enabled its shield
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8757 1466 100
+7492 6673 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8757, 1466) at power 100
+Pod 2 of player daemon_slayer moves towards (7492, 6673) at power 100
+018
+131
+Standard Output Stream:
+7847 5951 100
+10747 2746 0
+Game information:
+Pod 1 of player DarthBoss moves towards (7847, 5951) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8570 1780 0
+7546 6561 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8570, 1780) at power 0
+Pod 2 of player daemon_slayer moves towards (7546, 6561) at power 100
+019
+131
+Standard Output Stream:
+8107 5979 100
+10835 2754 SHIELD
+Game information:
+Pod 1 of player DarthBoss moves towards (8107, 5979) at power 100
+Pod 2 of player DarthBoss enabled its shield
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11173 3580 100
+7065 6854 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11173, 3580) at power 100
+Pod 2 of player daemon_slayer moves towards (7065, 6854) at power 100
+020
+131
+Standard Output Stream:
+8331 6011 100
+10939 2654 0
+Game information:
+Pod 1 of player DarthBoss moves towards (8331, 6011) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11101 3563 100
+7179 6707 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11101, 3563) at power 100
+Pod 2 of player daemon_slayer moves towards (7179, 6707) at power 100
+021
+131
+Standard Output Stream:
+8527 6047 100
+10999 2678 0
+Game information:
+Pod 1 of player DarthBoss moves towards (8527, 6047) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8294 2150 0
+7276 6583 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8294, 2150) at power 0
+Pod 2 of player daemon_slayer moves towards (7276, 6583) at power 100
+022
+131
+Standard Output Stream:
+8695 6087 100
+11047 2698 0
+Game information:
+Pod 1 of player DarthBoss moves towards (8695, 6087) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8288 1855 0
+7358 6478 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8288, 1855) at power 0
+Pod 2 of player daemon_slayer moves towards (7358, 6478) at power 100
+023
+131
+Standard Output Stream:
+8839 6131 100
+11091 2714 31
+Game information:
+Pod 1 of player DarthBoss moves towards (8839, 6131) at power 100
+Pod 2 of player DarthBoss moves towards (11091, 2714) at power 31
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11607 3561 100
+7186 6328 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11607, 3561) at power 100
+Pod 2 of player daemon_slayer moves towards (7186, 6328) at power 100
+024
+131
+Standard Output Stream:
+7485 4618 100
+11231 2754 41
+Game information:
+Pod 1 of player DarthBoss moves towards (7485, 4618) at power 100
+Pod 2 of player DarthBoss moves towards (11231, 2754) at power 41
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11556 3529 100
+7285 6267 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11556, 3529) at power 100
+Pod 2 of player daemon_slayer moves towards (7285, 6267) at power 100
+025
+131
+Standard Output Stream:
+7597 4770 100
+11359 2830 60
+Game information:
+Pod 1 of player DarthBoss moves towards (7597, 4770) at power 100
+Pod 2 of player DarthBoss moves towards (11359, 2830) at power 60
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11491 3456 100
+7371 6216 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11491, 3456) at power 100
+Pod 2 of player daemon_slayer moves towards (7371, 6216) at power 100
+026
+131
+Standard Output Stream:
+7661 5002 100
+7639 7095 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7661, 5002) at power 100
+Pod 2 of player DarthBoss moves towards (7639, 7095) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8661 1141 0
+7446 6174 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8661, 1141) at power 0
+Pod 2 of player daemon_slayer moves towards (7446, 6174) at power 100
+027
+131
+Standard Output Stream:
+7657 5290 0
+7899 7247 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7657, 5290) at power 0
+Pod 2 of player DarthBoss moves towards (7899, 7247) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+9318 981 0
+7511 6140 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (9318, 981) at power 0
+Pod 2 of player daemon_slayer moves towards (7511, 6140) at power 100
+028
+131
+Standard Output Stream:
+7405 5298 99
+8163 7275 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7405, 5298) at power 99
+Pod 2 of player DarthBoss moves towards (8163, 7275) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6490 6229 100
+7567 6112 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6490, 6229) at power 100
+Pod 2 of player daemon_slayer moves towards (7567, 6112) at power 100
+029
+131
+Standard Output Stream:
+7253 5634 65
+8395 7195 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7253, 5634) at power 65
+Pod 2 of player DarthBoss moves towards (8395, 7195) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6293 6006 100
+7616 6090 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6293, 6006) at power 100
+Pod 2 of player daemon_slayer moves towards (7616, 6090) at power 100
+030
+131
+Standard Output Stream:
+12359 3258 100
+7147 6975 100
+Game information:
+Pod 1 of player DarthBoss moves towards (12359, 3258) at power 100
+Pod 2 of player DarthBoss moves towards (7147, 6975) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6228 5682 100
+7659 6073 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6228, 5682) at power 100
+Pod 2 of player daemon_slayer moves towards (7659, 6073) at power 100
+031
+131
+Standard Output Stream:
+12055 3494 100
+7459 6747 100
+Game information:
+Pod 1 of player DarthBoss moves towards (12055, 3494) at power 100
+Pod 2 of player DarthBoss moves towards (7459, 6747) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10638 3214 100
+7698 6061 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10638, 3214) at power 100
+Pod 2 of player daemon_slayer moves towards (7698, 6061) at power 100
+032
+131
+Standard Output Stream:
+11711 3634 100
+7691 6527 100
+Game information:
+Pod 1 of player DarthBoss moves towards (11711, 3634) at power 100
+Pod 2 of player DarthBoss moves towards (7691, 6527) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10622 3186 100
+7732 6053 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10622, 3186) at power 100
+Pod 2 of player daemon_slayer moves towards (7732, 6053) at power 100
+033
+131
+Standard Output Stream:
+11351 3670 100
+7891 6339 100
+Game information:
+Pod 1 of player DarthBoss moves towards (11351, 3670) at power 100
+Pod 2 of player DarthBoss moves towards (7891, 6339) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10609 3163 100
+7764 6051 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10609, 3163) at power 100
+Pod 2 of player daemon_slayer moves towards (7764, 6051) at power 100
+034
+131
+Standard Output Stream:
+11031 3658 100
+8059 6179 100
+Game information:
+Pod 1 of player DarthBoss moves towards (11031, 3658) at power 100
+Pod 2 of player DarthBoss moves towards (8059, 6179) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10599 3142 100
+7800 6061 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (10599, 3142) at power 100
+Pod 2 of player daemon_slayer moves towards (7800, 6061) at power 0
+035
+131
+Standard Output Stream:
+10755 3642 100
+7379 6659 100
+Game information:
+Pod 1 of player DarthBoss moves towards (10755, 3642) at power 100
+Pod 2 of player DarthBoss moves towards (7379, 6659) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7358 4363 100
+6937 4705 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7358, 4363) at power 100
+Pod 2 of player daemon_slayer moves towards (6937, 4705) at power 100
+036
+131
+Standard Output Stream:
+10519 3622 100
+7639 6463 100
+Game information:
+Pod 1 of player DarthBoss moves towards (10519, 3622) at power 100
+Pod 2 of player DarthBoss moves towards (7639, 6463) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7753 4135 100
+6999 4790 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7753, 4135) at power 100
+Pod 2 of player daemon_slayer moves towards (6999, 4790) at power 100
+037
+131
+Standard Output Stream:
+10319 3602 100
+7859 6299 100
+Game information:
+Pod 1 of player DarthBoss moves towards (10319, 3602) at power 100
+Pod 2 of player DarthBoss moves towards (7859, 6299) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7513 6111 100
+7039 4906 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7513, 6111) at power 100
+Pod 2 of player daemon_slayer moves towards (7039, 4906) at power 100
+038
+131
+Standard Output Stream:
+10147 3578 100
+7899 6827 100
+Game information:
+Pod 1 of player DarthBoss moves towards (10147, 3578) at power 100
+Pod 2 of player DarthBoss moves towards (7899, 6827) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7617 6123 100
+7048 5042 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7617, 6123) at power 100
+Pod 2 of player daemon_slayer moves towards (7048, 5042) at power 100
+039
+131
+Standard Output Stream:
+9999 3554 100
+8051 6579 100
+Game information:
+Pod 1 of player DarthBoss moves towards (9999, 3554) at power 100
+Pod 2 of player DarthBoss moves towards (8051, 6579) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10568 3071 100
+7019 5183 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10568, 3071) at power 100
+Pod 2 of player daemon_slayer moves towards (7019, 5183) at power 100
+040
+131
+Standard Output Stream:
+9871 3526 100
+8179 6367 100
+Game information:
+Pod 1 of player DarthBoss moves towards (9871, 3526) at power 100
+Pod 2 of player DarthBoss moves towards (8179, 6367) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10565 3061 100
+6953 5319 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10565, 3061) at power 100
+Pod 2 of player daemon_slayer moves towards (6953, 5319) at power 100
+041
+131
+Standard Output Stream:
+9759 3494 100
+8283 6187 100
+Game information:
+Pod 1 of player DarthBoss moves towards (9759, 3494) at power 100
+Pod 2 of player DarthBoss moves towards (8283, 6187) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10562 3054 100
+6851 5436 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10562, 3054) at power 100
+Pod 2 of player daemon_slayer moves towards (6851, 5436) at power 100
+042
+131
+Standard Output Stream:
+5819 7567 0
+8367 6031 100
+Game information:
+Pod 1 of player DarthBoss moves towards (5819, 7567) at power 0
+Pod 2 of player DarthBoss moves towards (8367, 6031) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7905 6236 100
+6721 5523 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7905, 6236) at power 100
+Pod 2 of player daemon_slayer moves towards (6721, 5523) at power 100
+043
+131
+Standard Output Stream:
+6071 7467 100
+6953 4326 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6071, 7467) at power 100
+Pod 2 of player DarthBoss moves towards (6953, 4326) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7951 6268 100
+6574 5572 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7951, 6268) at power 100
+Pod 2 of player daemon_slayer moves towards (6574, 5572) at power 100
+044
+131
+Standard Output Stream:
+5975 7235 100
+7085 4286 100
+Game information:
+Pod 1 of player DarthBoss moves towards (5975, 7235) at power 100
+Pod 2 of player DarthBoss moves towards (7085, 4286) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7996 6304 100
+6421 5577 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7996, 6304) at power 100
+Pod 2 of player daemon_slayer moves towards (6421, 5577) at power 100
+045
+131
+Standard Output Stream:
+5955 6951 56
+7245 4346 100
+Game information:
+Pod 1 of player DarthBoss moves towards (5955, 6951) at power 56
+Pod 2 of player DarthBoss moves towards (7245, 4346) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8034 6339 100
+6276 5540 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8034, 6339) at power 100
+Pod 2 of player daemon_slayer moves towards (6276, 5540) at power 100
+046
+131
+Standard Output Stream:
+6095 6779 100
+7397 4502 0
+Game information:
+Pod 1 of player DarthBoss moves towards (6095, 6779) at power 100
+Pod 2 of player DarthBoss moves towards (7397, 4502) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8071 6377 100
+6150 5475 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8071, 6377) at power 100
+Pod 2 of player daemon_slayer moves towards (6150, 5475) at power 100
+047
+131
+Standard Output Stream:
+6239 6467 100
+7185 4630 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6239, 6467) at power 100
+Pod 2 of player DarthBoss moves towards (7185, 4630) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8104 6417 100
+6047 5402 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8104, 6417) at power 100
+Pod 2 of player daemon_slayer moves towards (6047, 5402) at power 100
+048
+131
+Standard Output Stream:
+6467 6199 100
+7277 4942 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6467, 6199) at power 100
+Pod 2 of player DarthBoss moves towards (7277, 4942) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+5928 6635 100
+5963 5317 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (5928, 6635) at power 100
+Pod 2 of player daemon_slayer moves towards (5963, 5317) at power 100
+049
+131
+Standard Output Stream:
+6763 5999 100
+7277 5282 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6763, 5999) at power 100
+Pod 2 of player DarthBoss moves towards (7277, 5282) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8757 1294 100
+10520 3189 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8757, 1294) at power 100
+Pod 2 of player daemon_slayer moves towards (10520, 3189) at power 100
+050
+131
+Standard Output Stream:
+7103 5891 100
+7181 5614 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7103, 5891) at power 100
+Pod 2 of player DarthBoss moves towards (7181, 5614) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8336 1215 100
+10454 3143 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8336, 1215) at power 100
+Pod 2 of player daemon_slayer moves towards (10454, 3143) at power 100
+051
+131
+Standard Output Stream:
+7459 5883 100
+6993 5910 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7459, 5883) at power 100
+Pod 2 of player DarthBoss moves towards (6993, 5910) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6788 5261 100
+10394 3148 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6788, 5261) at power 100
+Pod 2 of player daemon_slayer moves towards (10394, 3148) at power 100
+052
+131
+Standard Output Stream:
+7783 5939 100
+6729 6146 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7783, 5939) at power 100
+Pod 2 of player DarthBoss moves towards (6729, 6146) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6791 5295 100
+10353 3197 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6791, 5295) at power 100
+Pod 2 of player daemon_slayer moves towards (10353, 3197) at power 100
+053
+131
+Standard Output Stream:
+8063 5991 100
+6413 6294 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8063, 5991) at power 100
+Pod 2 of player DarthBoss moves towards (6413, 6294) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6792 5330 100
+10323 3248 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6792, 5330) at power 100
+Pod 2 of player daemon_slayer moves towards (10323, 3248) at power 100
+054
+131
+Standard Output Stream:
+8303 6043 100
+11395 3794 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8303, 6043) at power 100
+Pod 2 of player DarthBoss moves towards (11395, 3794) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6792 5366 100
+10299 3296 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6792, 5366) at power 100
+Pod 2 of player daemon_slayer moves towards (10299, 3296) at power 100
+055
+131
+Standard Output Stream:
+8507 6095 100
+11059 3742 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8507, 6095) at power 100
+Pod 2 of player DarthBoss moves towards (11059, 3742) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6790 5404 100
+10282 3342 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6790, 5404) at power 100
+Pod 2 of player daemon_slayer moves towards (10282, 3342) at power 100
+056
+131
+Standard Output Stream:
+8683 6147 100
+10771 3690 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8683, 6147) at power 100
+Pod 2 of player DarthBoss moves towards (10771, 3690) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6786 5446 100
+10270 3386 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6786, 5446) at power 100
+Pod 2 of player daemon_slayer moves towards (10270, 3386) at power 100
+057
+131
+Standard Output Stream:
+8835 6199 100
+10527 3642 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8835, 6199) at power 100
+Pod 2 of player DarthBoss moves towards (10527, 3642) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6778 5494 SHIELD
+10265 3430 100
+Game information:
+Pod 1 of player daemon_slayer enabled its shield
+Pod 2 of player daemon_slayer moves towards (10265, 3430) at power 100
+058
+131
+Standard Output Stream:
+8963 6255 100
+10319 3594 SHIELD
+Game information:
+Pod 1 of player DarthBoss moves towards (8963, 6255) at power 100
+Pod 2 of player DarthBoss enabled its shield
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6765 5549 100
+10268 3478 0
+Game information:
+Pod 1 of player daemon_slayer waits for its engine to reload
+Pod 2 of player daemon_slayer moves towards (10268, 3478) at power 0
+059
+131
+Standard Output Stream:
+7593 4746 100
+10191 2538 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7593, 4746) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6747 5609 100
+10381 3423 0
+Game information:
+Pod 1 of player daemon_slayer waits for its engine to reload
+Pod 2 of player daemon_slayer moves towards (10381, 3423) at power 0
+060
+131
+Standard Output Stream:
+7685 4906 100
+10363 2578 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7685, 4906) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6723 5668 100
+10476 3377 0
+Game information:
+Pod 1 of player daemon_slayer waits for its engine to reload
+Pod 2 of player daemon_slayer moves towards (10476, 3377) at power 0
+061
+131
+Standard Output Stream:
+7725 5142 100
+10507 2614 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7725, 5142) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8117 6434 100
+6712 6799 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (8117, 6434) at power 100
+Pod 2 of player daemon_slayer moves towards (6712, 6799) at power 0
+062
+131
+Standard Output Stream:
+7693 5422 0
+10631 2642 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7693, 5422) at power 0
+Pod 2 of player DarthBoss moves towards (10631, 2642) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6657 5788 100
+6781 6765 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6657, 5788) at power 100
+Pod 2 of player daemon_slayer moves towards (6781, 6765) at power 0
+063
+131
+Standard Output Stream:
+7437 5410 77
+10451 2846 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7437, 5410) at power 77
+Pod 2 of player DarthBoss moves towards (10451, 2846) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6618 5840 100
+6839 6736 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6618, 5840) at power 100
+Pod 2 of player daemon_slayer moves towards (6839, 6736) at power 100
+064
+131
+Standard Output Stream:
+7269 5654 59
+10299 3022 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7269, 5654) at power 59
+Pod 2 of player DarthBoss moves towards (10299, 3022) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6581 5883 100
+7011 6791 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6581, 5883) at power 100
+Pod 2 of player daemon_slayer moves towards (7011, 6791) at power 100
+065
+131
+Standard Output Stream:
+12403 3258 100
+10175 3178 100
+Game information:
+Pod 1 of player DarthBoss moves towards (12403, 3258) at power 100
+Pod 2 of player DarthBoss moves towards (10175, 3178) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6577 5887 100
+7172 6796 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6577, 5887) at power 100
+Pod 2 of player daemon_slayer moves towards (7172, 6796) at power 100
+066
+131
+Standard Output Stream:
+12131 3510 100
+10071 3314 100
+Game information:
+Pod 1 of player DarthBoss moves towards (12131, 3510) at power 100
+Pod 2 of player DarthBoss moves towards (10071, 3314) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10639 3216 100
+7315 6755 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10639, 3216) at power 100
+Pod 2 of player daemon_slayer moves towards (7315, 6755) at power 100
+067
+131
+Standard Output Stream:
+11807 3674 100
+9987 3438 100
+Game information:
+Pod 1 of player DarthBoss moves towards (11807, 3674) at power 100
+Pod 2 of player DarthBoss moves towards (9987, 3438) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10667 3301 100
+7427 6677 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10667, 3301) at power 100
+Pod 2 of player daemon_slayer moves towards (7427, 6677) at power 100
+068
+131
+Standard Output Stream:
+11455 3738 SHIELD
+6075 7667 0
+Game information:
+Pod 1 of player DarthBoss enabled its shield
+Pod 2 of player DarthBoss moves towards (6075, 7667) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10534 3374 100
+7499 6573 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10534, 3374) at power 100
+Pod 2 of player daemon_slayer moves towards (7499, 6573) at power 100
+069
+131
+Standard Output Stream:
+11179 3522 100
+6287 7551 0
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (6287, 7551) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10215 3546 100
+7546 6469 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10215, 3546) at power 100
+Pod 2 of player daemon_slayer moves towards (7546, 6469) at power 100
+070
+131
+Standard Output Stream:
+11203 3410 100
+6467 7455 SHIELD
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss enabled its shield
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10587 3117 100
+6917 7542 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10587, 3117) at power 100
+Pod 2 of player daemon_slayer moves towards (6917, 7542) at power 100
+071
+131
+Standard Output Stream:
+11223 3314 100
+6779 7099 30
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10580 3101 100
+7045 7284 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10580, 3101) at power 100
+Pod 2 of player daemon_slayer moves towards (7045, 7284) at power 100
+072
+131
+Standard Output Stream:
+11239 3234 100
+6887 7067 21
+Game information:
+Pod 1 of player DarthBoss moves towards (11239, 3234) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10575 3089 100
+7150 7063 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10575, 3089) at power 100
+Pod 2 of player daemon_slayer moves towards (7150, 7063) at power 100
+073
+131
+Standard Output Stream:
+10931 3274 100
+6979 7043 18
+Game information:
+Pod 1 of player DarthBoss moves towards (10931, 3274) at power 100
+Pod 2 of player DarthBoss waits for its engine to reload
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10571 3078 100
+7235 6872 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10571, 3078) at power 100
+Pod 2 of player daemon_slayer moves towards (7235, 6872) at power 100
+074
+131
+Standard Output Stream:
+10667 3302 100
+7055 7023 17
+Game information:
+Pod 1 of player DarthBoss moves towards (10667, 3302) at power 100
+Pod 2 of player DarthBoss moves towards (7055, 7023) at power 17
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10567 3069 100
+7305 6709 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10567, 3069) at power 100
+Pod 2 of player daemon_slayer moves towards (7305, 6709) at power 100
+075
+131
+Standard Output Stream:
+10443 3326 100
+7119 6947 0
+Game information:
+Pod 1 of player DarthBoss moves towards (10443, 3326) at power 100
+Pod 2 of player DarthBoss moves towards (7119, 6947) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10564 3061 100
+7363 6571 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10564, 3061) at power 100
+Pod 2 of player daemon_slayer moves towards (7363, 6571) at power 100
+076
+131
+Standard Output Stream:
+10251 3342 100
+7175 6939 0
+Game information:
+Pod 1 of player DarthBoss moves towards (10251, 3342) at power 100
+Pod 2 of player DarthBoss moves towards (7175, 6939) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10562 3054 100
+7410 6452 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10562, 3054) at power 100
+Pod 2 of player daemon_slayer moves towards (7410, 6452) at power 100
+077
+131
+Standard Output Stream:
+10087 3354 100
+11067 2814 0
+Game information:
+Pod 1 of player DarthBoss moves towards (10087, 3354) at power 100
+Pod 2 of player DarthBoss moves towards (11067, 2814) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+9429 3331 100
+7449 6350 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (9429, 3331) at power 100
+Pod 2 of player daemon_slayer moves towards (7449, 6350) at power 100
+078
+131
+Standard Output Stream:
+9947 3362 100
+7263 6927 100
+Game information:
+Pod 1 of player DarthBoss moves towards (9947, 3362) at power 100
+Pod 2 of player DarthBoss moves towards (7263, 6927) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+9228 3447 100
+7482 6264 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (9228, 3447) at power 100
+Pod 2 of player daemon_slayer moves towards (7482, 6264) at power 100
+079
+131
+Standard Output Stream:
+9827 3362 100
+7543 6695 100
+Game information:
+Pod 1 of player DarthBoss moves towards (9827, 3362) at power 100
+Pod 2 of player DarthBoss moves towards (7543, 6695) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+5947 5385 100
+7507 6189 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (5947, 5385) at power 100
+Pod 2 of player daemon_slayer moves towards (7507, 6189) at power 100
+080
+131
+Standard Output Stream:
+5879 7475 SHIELD
+7779 6499 100
+Game information:
+Pod 1 of player DarthBoss enabled its shield
+Pod 2 of player DarthBoss moves towards (7779, 6499) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10559 3044 100
+7298 7564 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10559, 3044) at power 100
+Pod 2 of player daemon_slayer moves towards (7298, 7564) at power 100
+081
+131
+Standard Output Stream:
+6175 7051 69
+7983 6331 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (7983, 6331) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10570 3077 100
+7334 7284 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10570, 3077) at power 100
+Pod 2 of player daemon_slayer moves towards (7334, 7284) at power 100
+082
+131
+Standard Output Stream:
+6371 7027 42
+8155 6191 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (8155, 6191) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10587 3117 100
+7359 7042 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10587, 3117) at power 100
+Pod 2 of player daemon_slayer moves towards (7359, 7042) at power 100
+083
+131
+Standard Output Stream:
+6539 7007 33
+8303 6071 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (8303, 6071) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10610 3166 100
+7376 6837 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10610, 3166) at power 100
+Pod 2 of player daemon_slayer moves towards (7376, 6837) at power 100
+084
+131
+Standard Output Stream:
+6683 6991 SHIELD
+8427 5971 100
+Game information:
+Pod 1 of player DarthBoss enabled its shield
+Pod 2 of player DarthBoss moves towards (8427, 5971) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10654 3239 100
+7388 6660 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10654, 3239) at power 100
+Pod 2 of player daemon_slayer moves towards (7388, 6660) at power 100
+085
+131
+Standard Output Stream:
+6579 6999 33
+8535 5887 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (8535, 5887) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10734 3340 100
+7395 6510 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10734, 3340) at power 100
+Pod 2 of player daemon_slayer moves towards (7395, 6510) at power 100
+086
+131
+Standard Output Stream:
+6715 6983 30
+8627 5815 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (8627, 5815) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10869 3456 100
+7398 6383 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10869, 3456) at power 100
+Pod 2 of player daemon_slayer moves towards (7398, 6383) at power 100
+087
+131
+Standard Output Stream:
+6831 6971 100
+7225 4186 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (7225, 4186) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11075 3556 100
+7398 6274 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11075, 3556) at power 100
+Pod 2 of player daemon_slayer moves towards (7398, 6274) at power 100
+088
+131
+Standard Output Stream:
+6931 6959 100
+7349 4226 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6931, 6959) at power 100
+Pod 2 of player DarthBoss moves towards (7349, 4226) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11197 3584 100
+7397 6180 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11197, 3584) at power 100
+Pod 2 of player daemon_slayer moves towards (7397, 6180) at power 100
+089
+131
+Standard Output Stream:
+7271 6731 100
+7481 4362 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7271, 6731) at power 100
+Pod 2 of player DarthBoss moves towards (7481, 4362) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11188 3583 100
+7393 6101 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11188, 3583) at power 100
+Pod 2 of player daemon_slayer moves towards (7393, 6101) at power 100
+090
+131
+Standard Output Stream:
+7555 6535 SHIELD
+7589 4582 0
+Game information:
+Pod 1 of player DarthBoss enabled its shield
+Pod 2 of player DarthBoss moves towards (7589, 4582) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11253 3591 100
+7388 6033 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11253, 3591) at power 100
+Pod 2 of player daemon_slayer moves towards (7388, 6033) at power 100
+091
+131
+Standard Output Stream:
+7327 6547 100
+7349 4698 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (7349, 4698) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6315 6659 100
+7381 5975 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6315, 6659) at power 100
+Pod 2 of player daemon_slayer moves towards (7381, 5975) at power 100
+092
+131
+Standard Output Stream:
+7351 6603 100
+7369 5050 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (7369, 5050) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+5967 6465 100
+7373 5924 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (5967, 6465) at power 100
+Pod 2 of player daemon_slayer moves towards (7373, 5924) at power 100
+093
+131
+Standard Output Stream:
+7371 6651 100
+7297 5402 100
+Game information:
+Pod 1 of player DarthBoss waits for its engine to reload
+Pod 2 of player DarthBoss moves towards (7297, 5402) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+5713 6187 100
+7363 5881 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (5713, 6187) at power 100
+Pod 2 of player daemon_slayer moves towards (7363, 5881) at power 100
+094
+131
+Standard Output Stream:
+7387 6691 100
+7133 5730 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7387, 6691) at power 100
+Pod 2 of player DarthBoss moves towards (7133, 5730) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11302 3593 100
+7349 5844 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11302, 3593) at power 100
+Pod 2 of player daemon_slayer moves towards (7349, 5844) at power 100
+095
+131
+Standard Output Stream:
+7671 6523 100
+6889 6002 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7671, 6523) at power 100
+Pod 2 of player DarthBoss moves towards (6889, 6002) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11219 3587 100
+7332 5812 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11219, 3587) at power 100
+Pod 2 of player daemon_slayer moves towards (7332, 5812) at power 100
+096
+131
+Standard Output Stream:
+7911 6379 100
+11907 3646 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7911, 6379) at power 100
+Pod 2 of player DarthBoss moves towards (11907, 3646) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11157 3577 100
+7307 5784 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (11157, 3577) at power 100
+Pod 2 of player daemon_slayer moves towards (7307, 5784) at power 100
+097
+131
+Standard Output Stream:
+6963 6079 100
+11563 3742 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6963, 6079) at power 100
+Pod 2 of player DarthBoss moves towards (11563, 3742) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+11198 3584 100
+7240 5767 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (11198, 3584) at power 100
+Pod 2 of player daemon_slayer moves towards (7240, 5767) at power 0
+098
+131
+Standard Output Stream:
+7351 6063 100
+11219 3734 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7351, 6063) at power 100
+Pod 2 of player DarthBoss moves towards (11219, 3734) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6128 4666 100
+6461 4454 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6128, 4666) at power 100
+Pod 2 of player daemon_slayer moves towards (6461, 4454) at power 0
+099
+131
+Standard Output Stream:
+7679 6055 100
+10911 3690 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7679, 6055) at power 100
+Pod 2 of player DarthBoss moves towards (10911, 3690) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6458 4437 100
+6451 4559 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6458, 4437) at power 100
+Pod 2 of player daemon_slayer moves towards (6451, 4559) at power 0
+100
+131
+Standard Output Stream:
+7143 5843 100
+10647 3646 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7143, 5843) at power 100
+Pod 2 of player DarthBoss moves towards (10647, 3646) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6835 4218 100
+6443 4647 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6835, 4218) at power 100
+Pod 2 of player daemon_slayer moves towards (6443, 4647) at power 0
+101
+131
+Standard Output Stream:
+7523 5931 100
+10423 3606 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7523, 5931) at power 100
+Pod 2 of player DarthBoss moves towards (10423, 3606) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7252 4011 100
+6436 4724 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (7252, 4011) at power 100
+Pod 2 of player daemon_slayer moves towards (6436, 4724) at power 0
+102
+131
+Standard Output Stream:
+7847 6019 100
+10231 3566 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7847, 6019) at power 100
+Pod 2 of player DarthBoss moves towards (10231, 3566) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8238 6670 100
+6429 4789 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8238, 6670) at power 100
+Pod 2 of player daemon_slayer moves towards (6429, 4789) at power 100
+103
+131
+Standard Output Stream:
+7415 5683 100
+10067 3526 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7415, 5683) at power 100
+Pod 2 of player DarthBoss moves towards (10067, 3526) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8254 6731 100
+6308 4928 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8254, 6731) at power 100
+Pod 2 of player daemon_slayer moves towards (6308, 4928) at power 100
+104
+131
+Standard Output Stream:
+7763 5887 100
+9923 3486 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7763, 5887) at power 100
+Pod 2 of player DarthBoss moves towards (9923, 3486) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8264 6781 100
+6239 5079 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8264, 6781) at power 100
+Pod 2 of player daemon_slayer moves towards (6239, 5079) at power 100
+105
+131
+Standard Output Stream:
+8055 6071 100
+9803 3446 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8055, 6071) at power 100
+Pod 2 of player DarthBoss moves towards (9803, 3446) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8270 6824 100
+6218 5225 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8270, 6824) at power 100
+Pod 2 of player daemon_slayer moves towards (6218, 5225) at power 100
+106
+131
+Standard Output Stream:
+8303 6243 100
+9699 3406 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8303, 6243) at power 100
+Pod 2 of player DarthBoss moves towards (9699, 3406) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10685 5179 100
+6247 5358 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10685, 5179) at power 100
+Pod 2 of player daemon_slayer moves towards (6247, 5358) at power 100
+107
+131
+Standard Output Stream:
+7943 6207 100
+5763 7479 0
+Game information:
+Pod 1 of player DarthBoss moves towards (7943, 6207) at power 100
+Pod 2 of player DarthBoss moves towards (5763, 7479) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10536 5863 0
+6315 5463 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10536, 5863) at power 0
+Pod 2 of player daemon_slayer moves towards (6315, 5463) at power 100
+108
+131
+Standard Output Stream:
+8199 6399 100
+6023 7391 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8199, 6399) at power 100
+Pod 2 of player DarthBoss moves towards (6023, 7391) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+10345 6609 0
+6392 5545 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (10345, 6609) at power 0
+Pod 2 of player daemon_slayer moves towards (6392, 5545) at power 100
+109
+131
+Standard Output Stream:
+8415 6579 100
+5939 7163 100
+Game information:
+Pod 1 of player DarthBoss moves towards (8415, 6579) at power 100
+Pod 2 of player DarthBoss moves towards (5939, 7163) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8872 7132 100
+7060 5392 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8872, 7132) at power 100
+Pod 2 of player daemon_slayer moves towards (7060, 5392) at power 100
+110
+131
+Standard Output Stream:
+8591 6747 100
+5931 6887 31
+Game information:
+Pod 1 of player DarthBoss moves towards (8591, 6747) at power 100
+Pod 2 of player DarthBoss moves towards (5931, 6887) at power 31
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+9053 7024 100
+6985 5497 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (9053, 7024) at power 100
+Pod 2 of player daemon_slayer moves towards (6985, 5497) at power 100
+111
+131
+Standard Output Stream:
+7479 7007 100
+6119 6799 0
+Game information:
+Pod 1 of player DarthBoss moves towards (7479, 7007) at power 100
+Pod 2 of player DarthBoss moves towards (6119, 6799) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8272 6971 100
+6883 5588 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8272, 6971) at power 100
+Pod 2 of player daemon_slayer moves towards (6883, 5588) at power 100
+112
+131
+Standard Output Stream:
+7815 7031 100
+6323 6819 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7815, 7031) at power 100
+Pod 2 of player DarthBoss moves towards (6323, 6819) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8273 6962 100
+6766 5659 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8273, 6962) at power 100
+Pod 2 of player daemon_slayer moves towards (6766, 5659) at power 100
+113
+131
+Standard Output Stream:
+6621 5438 100
+6551 6499 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6621, 5438) at power 100
+Pod 2 of player DarthBoss moves towards (6551, 6499) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8274 6934 100
+6630 5701 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8274, 6934) at power 100
+Pod 2 of player daemon_slayer moves towards (6630, 5701) at power 100
+114
+131
+Standard Output Stream:
+6849 5526 100
+6847 6259 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6849, 5526) at power 100
+Pod 2 of player DarthBoss moves towards (6847, 6259) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6657 5787 100
+11093 3682 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6657, 5787) at power 100
+Pod 2 of player daemon_slayer moves towards (11093, 3682) at power 100
+115
+131
+Standard Output Stream:
+6993 5694 100
+7183 6119 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6993, 5694) at power 100
+Pod 2 of player DarthBoss moves towards (7183, 6119) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+8013 7544 0
+10947 3649 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (8013, 7544) at power 0
+Pod 2 of player daemon_slayer moves towards (10947, 3649) at power 100
+116
+131
+Standard Output Stream:
+7089 5870 100
+7527 6083 100
+Game information:
+Pod 1 of player DarthBoss moves towards (7089, 5870) at power 100
+Pod 2 of player DarthBoss moves towards (7527, 6083) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+7188 7591 0
+10821 3615 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (7188, 7591) at power 0
+Pod 2 of player daemon_slayer moves towards (10821, 3615) at power 100
+117
+131
+Standard Output Stream:
+12491 3482 100
+7823 6055 100
+Game information:
+Pod 1 of player DarthBoss moves towards (12491, 3482) at power 100
+Pod 2 of player DarthBoss moves towards (7823, 6055) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6786 5885 100
+10792 3782 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6786, 5885) at power 100
+Pod 2 of player daemon_slayer moves towards (10792, 3782) at power 100
+118
+131
+Standard Output Stream:
+12467 3678 100
+8075 6039 100
+Game information:
+Pod 1 of player DarthBoss moves towards (12467, 3678) at power 100
+Pod 2 of player DarthBoss moves towards (8075, 6039) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6656 5789 100
+10683 3707 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6656, 5789) at power 100
+Pod 2 of player daemon_slayer moves towards (10683, 3707) at power 100
+119
+131
+Standard Output Stream:
+6333 5506 51
+8291 6031 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6333, 5506) at power 51
+Pod 2 of player DarthBoss moves towards (8291, 6031) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6660 5782 100
+10590 3634 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6660, 5782) at power 100
+Pod 2 of player daemon_slayer moves towards (10590, 3634) at power 100
+120
+131
+Standard Output Stream:
+11683 3086 100
+8479 6027 100
+Game information:
+Pod 1 of player DarthBoss moves towards (11683, 3086) at power 100
+Pod 2 of player DarthBoss moves towards (8479, 6027) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6698 5718 100
+10510 3563 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6698, 5718) at power 100
+Pod 2 of player daemon_slayer moves towards (10510, 3563) at power 100
+121
+131
+Standard Output Stream:
+11679 3378 100
+8639 6031 100
+Game information:
+Pod 1 of player DarthBoss moves towards (11679, 3378) at power 100
+Pod 2 of player DarthBoss moves towards (8639, 6031) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6768 5537 100
+10442 3493 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6768, 5537) at power 100
+Pod 2 of player daemon_slayer moves towards (10442, 3493) at power 100
+122
+131
+Standard Output Stream:
+6245 6174 28
+8779 6043 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6245, 6174) at power 28
+Pod 2 of player DarthBoss moves towards (8779, 6043) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6790 5279 100
+10384 3423 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6790, 5279) at power 100
+Pod 2 of player daemon_slayer moves towards (10384, 3423) at power 100
+123
+131
+Standard Output Stream:
+6221 6142 28
+7421 4494 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6221, 6142) at power 28
+Pod 2 of player DarthBoss moves towards (7421, 4494) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6717 5003 100
+10336 3352 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6717, 5003) at power 100
+Pod 2 of player daemon_slayer moves towards (10336, 3352) at power 100
+124
+131
+Standard Output Stream:
+6229 6106 27
+7545 4614 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6229, 6106) at power 27
+Pod 2 of player DarthBoss moves towards (7545, 4614) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6574 4792 100
+10299 3279 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6574, 4792) at power 100
+Pod 2 of player daemon_slayer moves towards (10299, 3279) at power 100
+125
+131
+Standard Output Stream:
+6257 6054 27
+7637 4822 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6257, 6054) at power 27
+Pod 2 of player DarthBoss moves towards (7637, 4822) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6418 4664 100
+10274 3199 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6418, 4664) at power 100
+Pod 2 of player daemon_slayer moves towards (10274, 3199) at power 100
+126
+131
+Standard Output Stream:
+6297 5986 28
+7669 5094 0
+Game information:
+Pod 1 of player DarthBoss moves towards (6297, 5986) at power 28
+Pod 2 of player DarthBoss moves towards (7669, 5094) at power 0
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6277 4594 100
+10267 3105 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6277, 4594) at power 100
+Pod 2 of player daemon_slayer moves towards (10267, 3105) at power 0
+127
+131
+Standard Output Stream:
+6345 5902 30
+7417 5134 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6345, 5902) at power 30
+Pod 2 of player DarthBoss moves towards (7417, 5134) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6155 4558 100
+10379 3109 0
+Game information:
+Pod 1 of player daemon_slayer moves towards (6155, 4558) at power 100
+Pod 2 of player daemon_slayer moves towards (10379, 3109) at power 0
+128
+131
+Standard Output Stream:
+6389 5802 34
+7313 5486 70
+Game information:
+Pod 1 of player DarthBoss moves towards (6389, 5802) at power 34
+Pod 2 of player DarthBoss moves towards (7313, 5486) at power 70
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+6003 3879 100
+6628 6573 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (6003, 3879) at power 100
+Pod 2 of player daemon_slayer moves towards (6628, 6573) at power 100
+129
+131
+Standard Output Stream:
+6429 5678 40
+12443 3154 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6429, 5678) at power 40
+Pod 2 of player DarthBoss moves towards (12443, 3154) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+5929 4058 100
+6707 6430 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (5929, 4058) at power 100
+Pod 2 of player daemon_slayer moves towards (6707, 6430) at power 100
+130
+131
+Standard Output Stream:
+6457 5530 49
+12175 3422 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6457, 5530) at power 49
+Pod 2 of player DarthBoss moves towards (12175, 3422) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+Standard Output Stream:
+5944 4082 100
+6819 6316 100
+Game information:
+Pod 1 of player daemon_slayer moves towards (5944, 4082) at power 100
+Pod 2 of player daemon_slayer moves towards (6819, 6316) at power 100
+131
+131
+Standard Output Stream:
+6461 5350 64
+12739 2978 100
+Game information:
+Pod 1 of player DarthBoss moves towards (6461, 5350) at power 64
+Pod 2 of player DarthBoss moves towards (12739, 2978) at power 100
+Game Summary:
+daemon_slayer rank: 2
+DarthBoss rank: 1
+End reached

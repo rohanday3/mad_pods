@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mad Pod Racing — PPO Training Visualiser</title>
+<style>
+  :root {
+    --bg:       #0d1117;
+    --surface:  #161b22;
+    --border:   #30363d;
+    --accent:   #58a6ff;
+    --green:    #3fb950;
+    --orange:   #f0883e;
+    --red:      #f85149;
+    --purple:   #bc8cff;
+    --text:     #e6edf3;
+    --muted:    #8b949e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* ── Top bar ── */
+  #topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+  #topbar h1 { font-size: 15px; color: var(--accent); letter-spacing: .04em; }
+  .stat { display: flex; flex-direction: column; align-items: center; min-width: 72px; }
+  .stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .stat-value { font-size: 18px; font-weight: 700; }
+  #status { margin-left: auto; font-size: 12px; color: var(--muted); }
+  #status.live { color: var(--green); }
+  #status.err  { color: var(--red);   }
+
+  /* ── Main layout ── */
+  #main {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    grid-template-rows: 1fr 160px;
+    gap: 1px;
+    background: var(--border);
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Race canvas */
+  #race-wrap {
+    grid-row: 1 / 3;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+  canvas#race { width: 100%; height: 100%; display: block; }
+
+  /* Charts panel */
+  #charts { background: var(--surface); padding: 12px 14px; overflow: hidden; }
+  #charts h2 { font-size: 11px; color: var(--muted); text-transform: uppercase;
+                letter-spacing: .06em; margin-bottom: 8px; }
+
+  /* PPO stats panel */
+  #ppo-panel {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 10px 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    align-content: start;
+  }
+  #ppo-panel h2 { grid-column: 1/-1; font-size: 11px; color: var(--muted);
+                   text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
+  .kv { display: flex; justify-content: space-between; font-size: 12px; }
+  .kv span:first-child { color: var(--muted); }
+  .kv span:last-child  { font-weight: 600; }
+
+  /* Playback bar */
+  #playbar {
+    position: absolute;
+    bottom: 8px; left: 50%;
+    transform: translateX(-50%);
+    background: rgba(22,27,34,.85);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(4px);
+  }
+  #playbar button {
+    background: none; border: none; color: var(--text); cursor: pointer;
+    font-size: 18px; line-height: 1;
+  }
+  #playbar button:hover { color: var(--accent); }
+  #frame-slider { width: 180px; cursor: pointer; accent-color: var(--accent); }
+  #frame-label  { font-size: 11px; color: var(--muted); min-width: 56px; }
+  #speed-sel    { background: var(--surface); border: 1px solid var(--border);
+                   color: var(--text); border-radius: 4px; padding: 2px 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div id="topbar">
+  <h1>⚡ PPO Training — Mad Pod Racing</h1>
+  <div class="stat">
+    <span class="stat-label">Update</span>
+    <span class="stat-value" id="s-gen">—</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Phase</span>
+    <span class="stat-value" id="s-phase" style="color:var(--orange)">—</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Timestep</span>
+    <span class="stat-value" id="s-ts">—</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Best Reward</span>
+    <span class="stat-value" id="s-best" style="color:var(--green)">—</span>
+  </div>
+  <div class="stat">
+    <span class="stat-label">Win Rate</span>
+    <span class="stat-value" id="s-wr">—</span>
+  </div>
+  <span id="status">No data</span>
+</div>
+
+<div id="main">
+  <!-- Race canvas -->
+  <div id="race-wrap">
+    <canvas id="race"></canvas>
+    <div id="playbar">
+      <button id="btn-prev" title="Previous frame">⏮</button>
+      <button id="btn-play" title="Play/Pause">▶</button>
+      <button id="btn-next" title="Next frame">⏭</button>
+      <input id="frame-slider" type="range" min="0" value="0">
+      <span id="frame-label">0 / 0</span>
+      <select id="speed-sel" title="Playback speed">
+        <option value="4">¼×</option>
+        <option value="2">½×</option>
+        <option value="1" selected>1×</option>
+        <option value="0.5">2×</option>
+        <option value="0.25">4×</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Reward chart -->
+  <div id="charts">
+    <h2>Episode Reward History</h2>
+    <canvas id="chart-reward" style="width:100%;height:calc(100% - 24px)"></canvas>
+  </div>
+
+  <!-- PPO diagnostics -->
+  <div id="ppo-panel">
+    <h2>PPO Diagnostics</h2>
+    <div class="kv"><span>Entropy</span>      <span id="d-ent">—</span></div>
+    <div class="kv"><span>Clip Frac</span>    <span id="d-clip">—</span></div>
+    <div class="kv"><span>Winner</span>       <span id="d-winner">—</span></div>
+    <div class="kv"><span>Elapsed</span>      <span id="d-time">—</span></div>
+  </div>
+</div>
+
+<script>
+// ── Config ────────────────────────────────────────────────────────────────────
+const POLL_MS   = 2000;   // re-fetch live_state.json every 2 s
+const FRAME_MS  = 50;     // base ms per frame at 1× speed
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let state        = null;
+let frames       = [];
+let checkpoints  = [];
+let currentFrame = 0;
+let playing      = false;
+let playTimer    = null;
+let speedFactor  = 1;     // from speed-sel
+let lastEtag     = "";
+
+// ── Canvas setup ──────────────────────────────────────────────────────────────
+const canvas  = document.getElementById("race");
+const ctx     = canvas.getContext("2d");
+
+function resizeCanvas() {
+  const wrap = document.getElementById("race-wrap");
+  canvas.width  = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  drawFrame(currentFrame);
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
+
+// ── Coordinate mapping ────────────────────────────────────────────────────────
+function toCanvas(wx, wy, mapW, mapH) {
+  const pad   = 40;
+  const scale = Math.min(
+    (canvas.width  - pad * 2) / mapW,
+    (canvas.height - pad * 2) / mapH
+  );
+  const ox = (canvas.width  - mapW * scale) / 2;
+  const oy = (canvas.height - mapH * scale) / 2;
+  return [ox + wx * scale, oy + wy * scale];
+}
+
+// ── Drawing ───────────────────────────────────────────────────────────────────
+const POD_COLORS = ["#58a6ff", "#3fb950", "#f0883e", "#f85149"];
+const POD_LABELS = ["Runner ●", "Blocker ▲", "Opp Runner ●", "Opp Blocker ▲"];
+const CP_R = 600;
+
+function drawFrame(fi) {
+  if (!state || !frames.length) { drawEmpty(); return; }
+  fi = Math.max(0, Math.min(fi, frames.length - 1));
+
+  const { map_w, map_h } = state;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Background gradient
+  const grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+  grad.addColorStop(0, "#0d1117");
+  grad.addColorStop(1, "#0a0e14");
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Draw checkpoint track
+  for (let i = 0; i < checkpoints.length; i++) {
+    const [cx, cy] = checkpoints[i];
+    const [x, y]   = toCanvas(cx, cy, map_w, map_h);
+    const r_px     = CP_R * Math.min(
+      (canvas.width  - 80) / map_w,
+      (canvas.height - 80) / map_h
+    );
+
+    // Connector line to next CP
+    const next    = checkpoints[(i + 1) % checkpoints.length];
+    const [nx, ny] = toCanvas(next[0], next[1], map_w, map_h);
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(nx, ny);
+    ctx.strokeStyle = "rgba(255,255,255,.06)";
+    ctx.lineWidth   = 1;
+    ctx.stroke();
+
+    // CP circle
+    ctx.beginPath();
+    ctx.arc(x, y, r_px, 0, Math.PI * 2);
+    ctx.strokeStyle = i === 0 ? "#f0883e" : "rgba(88,166,255,.35)";
+    ctx.lineWidth   = i === 0 ? 2.5 : 1.5;
+    ctx.stroke();
+    ctx.fillStyle = i === 0
+      ? "rgba(240,136,62,.08)"
+      : "rgba(88,166,255,.04)";
+    ctx.fill();
+
+    // CP index label
+    ctx.fillStyle   = "rgba(255,255,255,.4)";
+    ctx.font        = "bold 12px monospace";
+    ctx.textAlign   = "center";
+    ctx.textBaseline= "middle";
+    ctx.fillText(i, x, y);
+  }
+
+  // Draw pods
+  const frame = frames[fi];
+  frame.pods.forEach((pod, i) => {
+    const [x, y] = toCanvas(pod.x, pod.y, map_w, map_h);
+    const col    = POD_COLORS[i];
+    const isOur  = i < 2;
+
+    // Velocity arrow
+    if (pod.vx !== 0 || pod.vy !== 0) {
+      const scale = Math.min(
+        (canvas.width  - 80) / map_w,
+        (canvas.height - 80) / map_h
+      );
+      const ex = x + pod.vx * scale * 3;
+      const ey = y + pod.vy * scale * 3;
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(ex, ey);
+      ctx.strokeStyle = col + "66";
+      ctx.lineWidth   = 1.5;
+      ctx.stroke();
+    }
+
+    // Pod shape
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate((pod.angle * Math.PI) / 180);
+
+    const r = isOur ? 13 : 11;
+    if (i === 1 || i === 3) {
+      // Blocker: triangle
+      ctx.beginPath();
+      ctx.moveTo(r, 0);
+      ctx.lineTo(-r * 0.6, -r * 0.8);
+      ctx.lineTo(-r * 0.6,  r * 0.8);
+      ctx.closePath();
+    } else {
+      // Runner: circle
+      ctx.beginPath();
+      ctx.arc(0, 0, r, 0, Math.PI * 2);
+    }
+    ctx.fillStyle   = col + (isOur ? "cc" : "88");
+    ctx.fill();
+    ctx.strokeStyle = col;
+    ctx.lineWidth   = isOur ? 2 : 1.5;
+    ctx.stroke();
+
+    // Boost glow
+    if (pod.shield) {
+      ctx.beginPath();
+      ctx.arc(0, 0, r + 5, 0, Math.PI * 2);
+      ctx.strokeStyle = "#ffffff44";
+      ctx.lineWidth   = 3;
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Pod label
+    ctx.fillStyle   = col;
+    ctx.font        = "10px sans-serif";
+    ctx.textAlign   = "center";
+    ctx.textBaseline= "bottom";
+    ctx.fillText(POD_LABELS[i].split(" ")[0], x, y - 16);
+
+    // CP counter badge
+    if (isOur) {
+      ctx.fillStyle    = col;
+      ctx.font         = "bold 9px monospace";
+      ctx.textBaseline = "top";
+      ctx.fillText(`CP${pod.next_cp}`, x, y + 16);
+    }
+  });
+
+  // Winner banner
+  if (fi === frames.length - 1 && state.winner !== undefined) {
+    const names = state.team_names || ["NN Bot", "Heuristic"];
+    const w     = state.winner;
+    const msg   = w === 0 ? `🏆 ${names[0]} wins!`
+                : w === 1 ? `💀 ${names[1]} wins`
+                : "⏱ Timeout";
+    ctx.fillStyle    = "rgba(22,27,34,.82)";
+    ctx.fillRect(canvas.width/2 - 130, canvas.height/2 - 28, 260, 56);
+    ctx.fillStyle    = w === 0 ? "#3fb950" : "#f85149";
+    ctx.font         = "bold 22px sans-serif";
+    ctx.textAlign    = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(msg, canvas.width/2, canvas.height/2);
+  }
+
+  // Frame counter
+  ctx.fillStyle    = "rgba(139,148,158,.6)";
+  ctx.font         = "11px monospace";
+  ctx.textAlign    = "right";
+  ctx.textBaseline = "top";
+  ctx.fillText(`turn ${fi}`, canvas.width - 8, 8);
+}
+
+function drawEmpty() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle    = "rgba(139,148,158,.3)";
+  ctx.font         = "16px sans-serif";
+  ctx.textAlign    = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("Waiting for live_state.json …", canvas.width/2, canvas.height/2);
+}
+
+// ── Reward chart ──────────────────────────────────────────────────────────────
+const chartCanvas = document.getElementById("chart-reward");
+const cctx        = chartCanvas.getContext("2d");
+
+function drawRewardChart(history) {
+  const w = chartCanvas.parentElement.clientWidth  - 28;
+  const h = chartCanvas.parentElement.clientHeight - 40;
+  chartCanvas.width  = Math.max(w, 10);
+  chartCanvas.height = Math.max(h, 10);
+
+  if (!history || history.length < 2) {
+    cctx.fillStyle = "rgba(139,148,158,.3)";
+    cctx.font      = "12px sans-serif";
+    cctx.textAlign = "center";
+    cctx.textBaseline = "middle";
+    cctx.fillText("Not enough data yet", w/2, h/2);
+    return;
+  }
+
+  const rews  = history.map(h => h[1]);
+  const bests = history.map(h => h[2]);
+  const xs    = history.map(h => h[0]);
+
+  const minV = Math.min(...rews);
+  const maxV = Math.max(...bests, 0);
+  const rangeV = maxV - minV || 1;
+  const pad  = { l: 44, r: 8, t: 6, b: 22 };
+  const pw   = w - pad.l - pad.r;
+  const ph   = h - pad.t - pad.b;
+
+  function scaleX(i)   { return pad.l + (i / (history.length - 1)) * pw; }
+  function scaleY(v)   { return pad.t + ph - ((v - minV) / rangeV) * ph; }
+
+  cctx.clearRect(0, 0, w, h);
+
+  // Grid lines
+  cctx.strokeStyle = "rgba(255,255,255,.06)";
+  cctx.lineWidth   = 1;
+  for (let g = 0; g <= 4; g++) {
+    const yg = pad.t + (g / 4) * ph;
+    cctx.beginPath(); cctx.moveTo(pad.l, yg); cctx.lineTo(pad.l + pw, yg); cctx.stroke();
+    const val = maxV - (g / 4) * rangeV;
+    cctx.fillStyle    = "rgba(139,148,158,.6)";
+    cctx.font         = "9px monospace";
+    cctx.textAlign    = "right";
+    cctx.textBaseline = "middle";
+    cctx.fillText(val.toFixed(0), pad.l - 4, yg);
+  }
+
+  // Episode reward (faint line)
+  cctx.beginPath();
+  rews.forEach((v, i) => {
+    const x = scaleX(i), y = scaleY(v);
+    i === 0 ? cctx.moveTo(x, y) : cctx.lineTo(x, y);
+  });
+  cctx.strokeStyle = "rgba(88,166,255,.3)";
+  cctx.lineWidth   = 1;
+  cctx.stroke();
+
+  // Best reward (solid line)
+  cctx.beginPath();
+  bests.forEach((v, i) => {
+    const x = scaleX(i), y = scaleY(v);
+    i === 0 ? cctx.moveTo(x, y) : cctx.lineTo(x, y);
+  });
+  cctx.strokeStyle = "#3fb950";
+  cctx.lineWidth   = 2;
+  cctx.stroke();
+
+  // Zero line
+  if (minV < 0 && maxV > 0) {
+    const yz = scaleY(0);
+    cctx.beginPath(); cctx.moveTo(pad.l, yz); cctx.lineTo(pad.l + pw, yz);
+    cctx.strokeStyle = "rgba(255,255,255,.15)"; cctx.lineWidth = 1; cctx.setLineDash([4,4]);
+    cctx.stroke(); cctx.setLineDash([]);
+  }
+
+  // Legend
+  cctx.font = "10px sans-serif"; cctx.textBaseline = "top";
+  cctx.fillStyle = "rgba(88,166,255,.6)";
+  cctx.fillText("● episode", pad.l, 0);
+  cctx.fillStyle = "#3fb950";
+  cctx.fillText("● best", pad.l + 68, 0);
+}
+
+// ── Playback controls ─────────────────────────────────────────────────────────
+const slider     = document.getElementById("frame-slider");
+const frameLabel = document.getElementById("frame-label");
+const btnPlay    = document.getElementById("btn-play");
+const btnPrev    = document.getElementById("btn-prev");
+const btnNext    = document.getElementById("btn-next");
+const speedSel   = document.getElementById("speed-sel");
+
+function setFrame(fi) {
+  currentFrame = Math.max(0, Math.min(fi, frames.length - 1));
+  slider.value = currentFrame;
+  frameLabel.textContent = `${currentFrame} / ${frames.length - 1}`;
+  drawFrame(currentFrame);
+}
+
+function stepFrame() {
+  if (currentFrame < frames.length - 1) {
+    setFrame(currentFrame + 1);
+  } else {
+    stopPlay();
+  }
+}
+
+function startPlay() {
+  playing = true;
+  btnPlay.textContent = "⏸";
+  if (currentFrame >= frames.length - 1) setFrame(0);
+  playTimer = setInterval(stepFrame, FRAME_MS * speedFactor);
+}
+
+function stopPlay() {
+  playing = false;
+  btnPlay.textContent = "▶";
+  if (playTimer) clearInterval(playTimer);
+  playTimer = null;
+}
+
+btnPlay.addEventListener("click", () => playing ? stopPlay() : startPlay());
+btnPrev.addEventListener("click", () => { stopPlay(); setFrame(currentFrame - 1); });
+btnNext.addEventListener("click", () => { stopPlay(); setFrame(currentFrame + 1); });
+slider.addEventListener("input", () => { stopPlay(); setFrame(+slider.value); });
+speedSel.addEventListener("change", () => {
+  speedFactor = +speedSel.value;
+  if (playing) { stopPlay(); startPlay(); }
+});
+
+// ── State update ──────────────────────────────────────────────────────────────
+function applyState(s) {
+  state       = s;
+  frames      = s.frames || [];
+  checkpoints = s.checkpoints || [];
+
+  slider.max = Math.max(0, frames.length - 1);
+  if (!playing) setFrame(0);
+
+  // Top bar
+  document.getElementById("s-gen").textContent   = s.gen ?? "—";
+  document.getElementById("s-ts").textContent
+    = s.timestep ? (s.timestep / 1000).toFixed(0) + "k" : "—";
+  document.getElementById("s-best").textContent
+    = s.best_fitness != null ? s.best_fitness.toFixed(0) : "—";
+  document.getElementById("s-wr").textContent
+    = s.win_rate != null ? (s.win_rate * 100).toFixed(0) + "%" : "—";
+
+  const phaseNames = {1:"Nav", 2:"Race", 3:"Block"};
+  const phaseEl = document.getElementById("s-phase");
+  phaseEl.textContent = phaseNames[s.phase] ?? s.phase ?? "—";
+  phaseEl.style.color = s.phase === 3 ? "var(--purple)"
+                      : s.phase === 2 ? "var(--orange)"
+                      : "var(--accent)";
+
+  // PPO diagnostics
+  document.getElementById("d-ent").textContent
+    = s.sigma != null ? s.sigma.toFixed(3) : "—";
+  document.getElementById("d-clip").textContent
+    = s.clip_frac != null ? s.clip_frac.toFixed(3) : "—";
+  const winEl = document.getElementById("d-winner");
+  if (s.winner === 0) { winEl.textContent = "NN 🏆"; winEl.style.color = "var(--green)"; }
+  else if (s.winner === 1) { winEl.textContent = "Heuristic"; winEl.style.color = "var(--red)"; }
+  else { winEl.textContent = "Timeout"; winEl.style.color = "var(--muted)"; }
+  document.getElementById("d-time").textContent
+    = s.elapsed != null ? fmtSecs(s.elapsed) : "—";
+
+  drawRewardChart(s.history);
+}
+
+function fmtSecs(s) {
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sc = Math.floor(s % 60);
+  return h ? `${h}h${m}m` : m ? `${m}m${sc}s` : `${sc}s`;
+}
+
+// ── Polling ───────────────────────────────────────────────────────────────────
+const statusEl = document.getElementById("status");
+
+async function poll() {
+  try {
+    const res = await fetch("live_state.json?_=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const etag = res.headers.get("etag") || res.headers.get("last-modified") || "";
+    const json = await res.json();
+    if (etag !== lastEtag || !state) {
+      lastEtag = etag;
+      applyState(json);
+    }
+    statusEl.textContent = "● Live";
+    statusEl.className   = "live";
+  } catch(e) {
+    statusEl.textContent = "✖ " + e.message;
+    statusEl.className   = "err";
+  }
+}
+
+poll();
+setInterval(poll, POLL_MS);
+drawEmpty();
+</script>
+</body>
+</html>

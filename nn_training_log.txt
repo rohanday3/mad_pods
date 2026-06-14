@@ -1,0 +1,85 @@
+Initialising parameter vectors...
+Starting ES training: 500 generations, pop=100
+Runner params : 1076
+Blocker params: 995
+Curriculum: phase1=imitation(0-49), phase2=navigation(50-149), phase3=racing-runner(150-299), phase4=racing-blocker(300-499)
+Live dashboard: open race_viewer.html in your browser
+
+Gen    0 [ph1] | fit=   -453.2 | best=   -453.2 | σ=0.2999 | 3s *** NEW BEST ***
+Gen    9 [ph1] | fit=   -155.6 | best=   -155.6 | σ=0.2985 | 32s *** NEW BEST ***
+Gen   10 [ph1] | fit=   -539.1 | best=   -155.6 | σ=0.2984 | 35s
+Gen   20 [ph1] | fit=   -286.7 | best=   -155.6 | σ=0.2969 | 67s
+Gen   29 [ph1] | fit=   -144.5 | best=   -144.5 | σ=0.2955 | 96s *** NEW BEST ***
+Gen   30 [ph1] | fit=   -488.0 | best=   -144.5 | σ=0.2954 | 100s
+Gen   40 [ph1] | fit=   -277.9 | best=   -144.5 | σ=0.2939 | 132s
+
+>>> Entering phase 2: navigation <<<
+
+Gen   50 [ph2] | fit=    -50.0 | best=    -50.0 | σ=0.2924 | 163s *** NEW BEST ***
+Gen   51 [ph2] | fit=    228.9 | best=    228.9 | σ=0.2923 | 165s *** NEW BEST ***
+Gen   53 [ph2] | fit=    434.3 | best=    434.3 | σ=0.2920 | 168s *** NEW BEST ***
+Gen   55 [ph2] | fit=   2003.0 | best=   2003.0 | σ=0.2917 | 172s *** NEW BEST ***
+Gen   60 [ph2] | fit=    838.8 | best=   2003.0 | σ=0.2910 | 181s
+Gen   70 [ph2] | fit=    261.6 | best=   2003.0 | σ=0.2895 | 199s
+Gen   80 [ph2] | fit=    548.4 | best=   2003.0 | σ=0.2881 | 217s
+Gen   87 [ph2] | fit=   2593.8 | best=   2593.8 | σ=0.2871 | 229s *** NEW BEST ***
+Gen   90 [ph2] | fit=    561.0 | best=   2593.8 | σ=0.2867 | 235s
+Gen  100 [ph2] | fit=    579.1 | best=   2593.8 | σ=0.2852 | 253s
+Gen  110 [ph2] | fit=    288.3 | best=   2593.8 | σ=0.2838 | 271s
+Gen  120 [ph2] | fit=    546.4 | best=   2593.8 | σ=0.2824 | 289s
+Gen  130 [ph2] | fit=    286.4 | best=   2593.8 | σ=0.2810 | 306s
+Gen  140 [ph2] | fit=    572.4 | best=   2593.8 | σ=0.2796 | 324s
+
+>>> Entering phase 3: racing (runner) <<<
+
+Gen  150 [ph3] | fit= -20592.0 | best= -20592.0 | σ=0.2782 | 343s *** NEW BEST ***
+Gen  151 [ph3] | fit= -19217.6 | best= -19217.6 | σ=0.2780 | 346s *** NEW BEST ***
+Gen  153 [ph3] | fit= -18685.5 | best= -18685.5 | σ=0.2778 | 351s *** NEW BEST ***
+Gen  160 [ph3] | fit= -20283.7 | best= -18685.5 | σ=0.2768 | 368s
+Gen  164 [ph3] | fit= -18454.9 | best= -18454.9 | σ=0.2762 | 378s *** NEW BEST ***
+Gen  170 [ph3] | fit= -19526.1 | best= -18454.9 | σ=0.2754 | 392s
+Gen  180 [ph3] | fit= -20064.4 | best= -18454.9 | σ=0.2740 | 415s
+Gen  190 [ph3] | fit= -19512.1 | best= -18454.9 | σ=0.2727 | 439s
+Gen  200 [ph3] | fit= -20566.5 | best= -18454.9 | σ=0.2713 | 462s
+Gen  204 [ph3] | fit= -18446.1 | best= -18446.1 | σ=0.2708 | 471s *** NEW BEST ***
+Gen  210 [ph3] | fit= -19263.7 | best= -18446.1 | σ=0.2700 | 485s
+Gen  214 [ph3] | fit= -17889.9 | best= -17889.9 | σ=0.2694 | 495s *** NEW BEST ***
+Gen  220 [ph3] | fit= -20320.0 | best= -17889.9 | σ=0.2686 | 509s
+Gen  230 [ph3] | fit= -19543.3 | best= -17889.9 | σ=0.2673 | 533s
+Gen  240 [ph3] | fit= -21388.2 | best= -17889.9 | σ=0.2659 | 556s
+Gen  250 [ph3] | fit= -19549.8 | best= -17889.9 | σ=0.2646 | 579s
+Gen  260 [ph3] | fit= -19794.8 | best= -17889.9 | σ=0.2633 | 602s
+Gen  270 [ph3] | fit= -20355.9 | best= -17889.9 | σ=0.2620 | 626s
+Gen  280 [ph3] | fit= -19990.3 | best= -17889.9 | σ=0.2607 | 649s
+Gen  281 [ph3] | fit=  -7921.6 | best=  -7921.6 | σ=0.2605 | 651s *** NEW BEST ***
+Gen  290 [ph3] | fit= -19533.8 | best=  -7921.6 | σ=0.2594 | 672s
+
+>>> Entering phase 4: racing (blocker) <<<
+
+Gen  300 [ph4] | fit= -20549.7 | best= -20549.7 | σ=0.2581 | 696s *** NEW BEST ***
+Gen  301 [ph4] | fit= -18707.1 | best= -18707.1 | σ=0.2579 | 698s *** NEW BEST ***
+Gen  310 [ph4] | fit= -20348.0 | best= -18707.1 | σ=0.2568 | 720s
+Gen  320 [ph4] | fit= -20016.8 | best= -18707.1 | σ=0.2555 | 744s
+Gen  330 [ph4] | fit= -20558.1 | best= -18707.1 | σ=0.2542 | 769s
+Gen  335 [ph4] | fit= -18183.2 | best= -18183.2 | σ=0.2536 | 780s *** NEW BEST ***
+Gen  340 [ph4] | fit= -20078.4 | best= -18183.2 | σ=0.2530 | 792s
+Gen  350 [ph4] | fit= -20345.3 | best= -18183.2 | σ=0.2517 | 816s
+Gen  360 [ph4] | fit= -20020.2 | best= -18183.2 | σ=0.2504 | 841s
+Gen  370 [ph4] | fit= -20298.3 | best= -18183.2 | σ=0.2492 | 865s
+Gen  380 [ph4] | fit= -20048.0 | best= -18183.2 | σ=0.2480 | 889s
+Gen  384 [ph4] | fit= -18147.3 | best= -18147.3 | σ=0.2475 | 899s *** NEW BEST ***
+Traceback (most recent call last):
+  File "/home/rohan/max_pod/nn_train.py", line 624, in <module>
+    train()
+  File "/home/rohan/max_pod/nn_train.py", line 571, in train
+    evaluate_racing(runner_flat, blocker_flat + sigma * blocker_noise[i], n_rollouts=2)
+  File "/home/rohan/max_pod/nn_train.py", line 391, in evaluate_racing
+    o_act1, o_act2 = opp.get_actions(pods)
+                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rohan/max_pod/champion_opponent.py", line 279, in get_actions
+    block_cp_idx = _get_intercept_cp(blocker, opp_runner, runner, checkpoints)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/rohan/max_pod/champion_opponent.py", line 85, in _get_intercept_cp
+    dist_blocker = math.hypot(cp_x - blocker_pod.x, cp_y - blocker_pod.y)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
